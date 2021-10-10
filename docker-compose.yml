@@ -1,0 +1,11 @@
+services:
+  productpage:
+    build: .
+    image: ghcr.io/zeferos/bookinfo-productpage:dev
+    container_name: productpage
+    ports: 
+      - "8083:8083"
+    environment:
+      DETAILS_HOSTNAME: http://details:8081
+      RATINGS_HOSTNAME: http://ratings:8080
+      REVIEWS_HOSTNAME: http://reviews:9080
